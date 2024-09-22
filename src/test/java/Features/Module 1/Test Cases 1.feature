@@ -22,6 +22,7 @@ Feature: Open nyse website and do anything to learn selenium framework
     When I want to get all the ipo data of <Waystar Holding Corp> in ipo table
     Then verify something
     Adding line for testing wipro interview
+    second line
 
     Examples: 
       | URL  | IPO Name |
