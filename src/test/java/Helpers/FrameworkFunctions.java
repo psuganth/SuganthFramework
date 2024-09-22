@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 import org.testng.annotations.BeforeSuite;
 
-public class FrameworkFunctions {
+public class FrameworkFunctions extends Initialization {
 	
 	
 	@BeforeSuite
@@ -28,6 +28,10 @@ public class FrameworkFunctions {
 			e.printStackTrace();
 		}
 		return propValue;
+	}
+	
+	public void quitDriver() {
+		driver.close();
 	}
 	
 	
