@@ -21,6 +21,7 @@ Feature: Open nyse website and do anything to learn selenium framework
     Given I want to open the nyse <URL>
     When I want to get all the ipo data of <Waystar Holding Corp> in ipo table
     Then verify something
+    Adding line for testing wipro interview
 
     Examples: 
       | URL  | IPO Name |
