@@ -3,11 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Helpers.Initialization">
+      <class name="TestRunner.TestNGCucumberRunner">
         <methods>
-          <include name="InvokeBrowser"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- Helpers.Initialization -->
+      </class> <!-- TestRunner.TestNGCucumberRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -4,10 +4,11 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 	      features = {"src/test/java/Features"},
-	      glue = {"com.company.step.definitions"},
+	      glue = {"StepDefinitions"},
 	      monochrome = true,
 	      dryRun = false,
-	      plugin = {"pretty"})
-public class RunnerTest extends AbstractTestNGCucumberTests{
+	      plugin = {"pretty", "html:target/cucumber-reports.html"}
+	      )
+public class TestNGCucumberRunner extends AbstractTestNGCucumberTests{
 
 }

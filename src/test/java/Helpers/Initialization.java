@@ -9,10 +9,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
-@Test
+
 public class Initialization {
 	public WebDriver driver;
-	
+	@BeforeSuite
 	public void InvokeBrowser() throws Exception {
 		String browserName = FrameworkFunctions.readPropertyFile("browser");
 		
@@ -35,21 +35,6 @@ public class Initialization {
 
 	}
 	
-	public void loadURL() {
-		try {
-		driver.manage().window().maximize();
-		driver.get(FrameworkFunctions.readPropertyFile("QAURL"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.findElement(By.xpath("//button[text()='Accept All Cookies']")).click();
-		Thread.sleep(5000);
-		WebElement element = driver.findElement(By.xpath("//button[text()='180']"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		element.click();
-		System.out.println(FrameworkFunctions.readPropertyFile("QAURL"));
-		} catch (InterruptedException e) {
-			System.out.println("Load URL have failed");
-			e.printStackTrace();
-		}
-	}
+	
 
 }
