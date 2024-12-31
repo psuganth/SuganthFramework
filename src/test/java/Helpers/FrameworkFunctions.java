@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeSuite;
 
 public class FrameworkFunctions extends Initialization {
 	
-	
+	/*
 	@BeforeSuite
 	public static String readPropertyFile(String value) {
 		Properties prop = new Properties();
@@ -52,7 +52,7 @@ public class FrameworkFunctions extends Initialization {
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 	@AfterSuite
 	public void quitDriver() {
 		driver.close();

@@ -1,27 +1,70 @@
 package StepDefinitions;
 
+import io.cucumber.core.plugin.Options;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.testng.Assert.assertEquals;
+import org.openqa.selenium.chrome.ChromeOptions;
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+
+import javax.swing.Action;
+
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.util.Collections;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.*;
 import PageObjectClasses.UsableFunctions;
 
 
 public class PriceValidationSteps extends UsableFunctions{
+	public WebDriver driver;
+	
+	@FindBy(xpath="//span[contains(text(),'Hello, sign in')]")
+	public WebElement signInButton;
+	
+	@FindBy(xpath="//input[@name='email']")
+	public WebElement userName;
+	
+	@FindBy(xpath="//input[@id='ap_password']")
+	public WebElement password;
+	
+	@FindBy(xpath="//input[@id='continue']")
+	public WebElement continueButton;
+	
+	@FindBy(xpath="//input[@id='signInSubmit']")
+	public WebElement submitButton;
+	
 	@Given("open the Amazon webpage {string}")
-	public void open_the_amazon_webpage(String string) {
-	    driver.get("https://www.amazon.in/");
-	    throw new io.cucumber.java.PendingException();
+	public void open_the_amazon_webpage(String url) {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-notifications");
+		options.addArguments("start-maximized");
+		//options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));
+		driver = new ChromeDriver(options);
+	    driver.get(url);
 	}
 
 	@When("logged into the login page")
 	public void logged_into_the_login_page() {
-		driver.findElement(By.xpath("//span[contains(text(),'Hello, sign in')]")).click();
-		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("mailforjenkins16@gmail.com");
-		driver.findElement(By.xpath("//input[@id='continue']")).click();
-		driver.findElement(By.xpath("//input[@id='ap_password']")).sendKeys("Zebra$123#");
-		driver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
+		clickElement(signInButton);
+		enterText(userName,"mailforjenkins16@gmail.com");
+		clickElement(continueButton);
+		enterText(password,"Zebra$123#");
+		clickElement(submitButton);
 	}
 
 	@Then("navigate to the All left pane section")
@@ -31,8 +74,12 @@ public class PriceValidationSteps extends UsableFunctions{
 	}
 
 	@Then("click on the Mobiles section")
-	public void click_on_the_mobiles(Integer int1) {
-		driver.findElement(By.xpath("//div[text()='Mobiles, Computers']")).click();
+	public void click_on_the_mobiles() {
+		WebElement ele = driver.findElement(By.xpath("//div[@id='hmenu-canvas']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", ele);
+		
+		driver.findElement(By.xpath("(//div[text()='Mobiles, Computers'])[1]")).click();
 		
 	}
 
@@ -50,7 +97,10 @@ public class PriceValidationSteps extends UsableFunctions{
 
 	@Then("click on the specific {string} from the list")
 	public void click_on_the_specific_from_the_list(String string) {
-		driver.findElement(By.xpath("//span[contains(text(),'iPhone 16 Pro 256 GB')]")).click();
+		
+		WebElement phone = driver.findElement(By.xpath("//span[contains(text(),'iPhone 16 Pro 256 GB')]"));
+		Actions action = new Actions(driver);
+		action.moveToElement(phone).click();
 		
 	}
 
@@ -63,13 +113,16 @@ public class PriceValidationSteps extends UsableFunctions{
 
 	@Then("search for the {string} from the search bar")
 	public void search_for_the_phone_model_from_the_search_bar(String phoneModel) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys(phoneModel);
+		driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
+
 	}
 
 	@Then("click on the {string} in the list")
 	public void click_on_the_phone_model_in_the_list(String phoneModel) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		driver.findElement(By.xpath("(//span[contains(text(),'iPhone 16 Pro 256 GB')])[2]")).click();
+		
+		//clickElement()
+	    
 	}
 }

@@ -23,6 +23,14 @@ public class UsableFunctions extends Initialization{
 		}
 	}
 	
+	public void clickElement(WebElement xpathval) {
+		xpathval.click();
+	}
+	
+	public void enterText(WebElement val, String textVal) {
+		val.sendKeys(textVal);
+	}
+	/*
 	public void clickPreloginButton() {
 		try {
 			ff.loadURL();
@@ -32,11 +40,14 @@ public class UsableFunctions extends Initialization{
 			e.printStackTrace();
 		}
 	}
+	*/
 	
 	public void enterLoginCredentials() {
 		driver.findElement(By.xpath("//input[@placeholder='User Name']")).sendKeys("psuganth12");
 		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Giraffe@123");
 		driver.findElement(By.xpath("//button[text()='SIGN IN']")).click();
 	}
+	
+	
 
 }

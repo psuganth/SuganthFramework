@@ -12,9 +12,9 @@ import org.testng.annotations.*;
 
 public class Initialization {
 	public WebDriver driver;
-	@BeforeSuite
+	
 	public void InvokeBrowser() throws Exception {
-		String browserName = FrameworkFunctions.readPropertyFile("browser");
+		String browserName = "chrome";
 		
 		
 		if(browserName.equalsIgnoreCase("chrome")) {
