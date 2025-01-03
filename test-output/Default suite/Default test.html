@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 30 14:43:27 IST 2024</td>
+<td>Started on:</td><td>Thu Jan 02 22:48:37 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>4 seconds (4499 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (15 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,76 +67,5 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='TestRunner.TestNGCucumberRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner.TestNGCucumberRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Price validation from the search bar", "Create a selenium framework by using IRCTC website"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because &quot;xpathval&quot; is null
-	at PageObjectClasses.UsableFunctions.clickElement(UsableFunctions.java:27)
-	at StepDefinitions.PriceValidationSteps.logged_into_the_login_page(PriceValidationSteps.java:64)
-	at ✽.logged into the login page(file:///C:/Users/psuga/eclipse-workspace/SuganthFramework/src/test/java/Features/Price%20Validation.feature:7)
-</pre></div><a href='#' onClick='toggleBox("stack-trace685219002", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace685219002'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because &quot;xpathval&quot; is null
-	at PageObjectClasses.UsableFunctions.clickElement(UsableFunctions.java:27)
-	at StepDefinitions.PriceValidationSteps.logged_into_the_login_page(PriceValidationSteps.java:64)
-	at ✽.logged into the login page(file:///C:/Users/psuga/eclipse-workspace/SuganthFramework/src/test/java/Features/Price%20Validation.feature:7)
-</pre></div></td>
-<td>2</td>
-<td>TestRunner.TestNGCucumberRunner@16150369</td></tr>
-<tr>
-<td title='TestRunner.TestNGCucumberRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner.TestNGCucumberRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Price validation from the mobile section", "Create a selenium framework by using IRCTC website"</td>
-<td><div><pre>org.openqa.selenium.InvalidArgumentException: invalid argument
-  (Session info: chrome=131.0.6778.205)
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [262b398265c166d263a3aba246e024f0, get {url=QAURL}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\psuga\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49977}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49977/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 262b398265c166d263a3aba246e024f0
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
-	at StepDefinitions.PriceValidationSteps.open_the_amazon_webpage(PriceValidationSteps.java:58)
-	at ✽.open the Amazon webpage &apos;QAURL&apos;(file:///C:/Users/psuga/eclipse-workspace/SuganthFramework/src/test/java/Features/Price%20Validation.feature:19)
-</pre></div><a href='#' onClick='toggleBox("stack-trace537483956", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace537483956'><pre>org.openqa.selenium.InvalidArgumentException: invalid argument
-  (Session info: chrome=131.0.6778.205)
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [262b398265c166d263a3aba246e024f0, get {url=QAURL}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\psuga\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49977}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49977/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 262b398265c166d263a3aba246e024f0
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
-	at StepDefinitions.PriceValidationSteps.open_the_amazon_webpage(PriceValidationSteps.java:58)
-	at ✽.open the Amazon webpage &apos;QAURL&apos;(file:///C:/Users/psuga/eclipse-workspace/SuganthFramework/src/test/java/Features/Price%20Validation.feature:19)
-</pre></div></td>
-<td>1</td>
-<td>TestRunner.TestNGCucumberRunner@16150369</td></tr>
-</table><p>
 </body>
 </html>
